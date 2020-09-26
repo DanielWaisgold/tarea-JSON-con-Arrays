@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea JSON con ARRAYS</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+</head>
+<body class = "fondo">
+    <h1> JSON con Arrays </h1> <!-- Título --> 
+    <br><br>
+   
+    <div>
+        <!--Cajas Input-->
+       
+    </div>
+
+     <script>
+        var nombreAlumno = prompt("Ingrese un nombre: Pepe, Tina; Fito");
+        var fueraLista = 0;
+        const alumnos =
+        [
+            {
+                Nombre: "Pepe",
+                Edad: 25,
+                Profesion: "programador",
+                hobbies:
+                [
+                    {
+                        actividad: "Running", 
+                        lugar: "Plaza Irlanda", 
+                        tiempoMinutos: 40 
+                    },
+                    {
+                        actividad: "Recitales",
+                        lugar: "Gran Rex",
+                        tiempoMinutos: 120
+                    }    
+                ],
+                              
+                
+                
+            } ,     
+
+            {
+                Nombre: "Tina",
+                Edad: 30,
+                Profesion: "Doctora",
+                hobbies:
+                [
+                    {
+                        actividad: "Tenis", 
+                        lugar: ["Club Comunicaciones", "El Anden"], 
+                        tiempoMinutos: [60, 90] 
+                    },
+                    {
+                        actividad: ["Peliculas", "Series"],
+                        lugar: ["Caballito Shopping", "Casa"],
+                        tiempoMinutos: [90, 120, 150, 180]
+                    }    
+                ]
+               
+            },    
+
+            {
+                Nombre: "Fito",
+                Edad: 32,
+                Profesion: "Veterinario",
+                hobbies:
+                [
+                    {
+                        actividad: "Pesca", 
+                        lugar: "Club Nautico Cordoba", 
+                        tiempoMinutos: [180, 300] 
+                    },
+                    {
+                        actividad: ["Peliculas", "Documentales"],
+                        lugar: ["Centro Cultural España", "Cine"],
+                        tiempoMinutos: [120, 150, 180]
+                    }    
+                ]
+               
+            }     
+
+            
+
+
+          
+        ]
+
+
+    for (var i = 0; i < 3; i++)
+    {
+                    
+    if (nombreAlumno === alumnos[i].Nombre)
+    {
+        document.write(`El alumno ${alumnos[i].Nombre} tiene los siguientes parametros <br>`);       
+        document.write(`Edad: ${alumnos[i].Edad}<br>`);
+        document.write(`Profesion: ${alumnos[i].Profesion}<br><br>`);
+        
+            
+           
+                document.write(`Hobbies<br><br>`);
+                
+                {
+                for (var i2 = 0; i2 < 2; i2++)
+                    document.write(` Actividad: ${i2 + 1}<br> ${alumnos[i].hobbies[i2].actividad}<br> 
+                                     Lugar: ${alumnos[i].hobbies[i2].lugar}<br>
+                                     Duraciòn: ${alumnos[i].hobbies[i2].tiempoMinutos}
+                                     <br><br>`);
+                }
+        fueraLista = 1;
+    }
+    
+           
+           
+    
+    }        
+
+    if(fueraLista === 0)
+        document.write(`${nombreAlumno} no se encuentra en lista`);
+    else
+        document.write(`Alumno en lista`);
+     
+   
+     </script>
+    
+
+</body>
+</html>
